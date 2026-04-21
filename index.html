@@ -1,76 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SFTSV-DB | Genomic Surveillance Portal</title>
-    <!-- 引入 Bootstrap 提升专业感 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>SFTSV-DB | 全球基因组监测平台</title>
     <style>
-        .hero-section { background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%); color: white; padding: 80px 0; }
-        .feature-card { transition: transform 0.3s; cursor: pointer; }
-        .feature-card:hover { transform: translateY(-10px); }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e9eef3 100%);
+            min-height: 100vh;
+            color: #1a2a3a;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            text-align: center;
+            padding: 3rem 0 2rem;
+        }
+        h1 {
+            font-size: 2.8rem;
+            background: linear-gradient(135deg, #1e6f5c, #289672);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: #4a627a;
+            margin-top: 1rem;
+            border-bottom: 2px solid #cbdbe0;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin: 2.5rem 0;
+            flex-wrap: wrap;
+        }
+        .stat-card {
+            background: white;
+            padding: 1.5rem 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            min-width: 160px;
+        }
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1e6f5c;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #6c7e97;
+            margin-top: 0.5rem;
+        }
+        .button-panel {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            background: white;
+            padding: 0.9rem 2rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            border: 1px solid #dce5ef;
+            color: #1e4663;
+        }
+        .btn-primary {
+            background: #1e6f5c;
+            border: none;
+            color: white;
+            box-shadow: 0 8px 18px rgba(30,111,92,0.25);
+        }
+        .btn-primary:hover {
+            background: #0f5545;
+            transform: translateY(-2px);
+        }
+        .btn-outline:hover {
+            background: #eef3fc;
+            transform: translateY(-1px);
+        }
+        .info-section {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border: 1px solid #e2edf7;
+        }
+        h2 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: #1a3e50;
+        }
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            font-size: 0.85rem;
+            color: #6c86a3;
+            border-top: 1px solid #d0dee9;
+        }
+        @media (max-width: 700px) {
+            .container { padding: 1rem; }
+            h1 { font-size: 1.9rem; }
+            .stat-card { padding: 1rem; min-width: 120px; }
+            .stat-number { font-size: 1.6rem; }
+        }
     </style>
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">SFTSV-Genomic-Dashboard</a>
-        </div>
-    </nav>
-
-    <!-- 主展示区 -->
-    <header class="hero-section text-center">
-        <div class="container">
-            <h1 class="display-4 fw-bold">SFTSV-DB</h1>
-            <p class="lead">The First Global Genomic Surveillance Platform for SFTS Virus</p>
-            <div class="mt-4">
-                <span class="badge bg-light text-dark p-2 mx-2">2000+ Sequences</span>
-                <span class="badge bg-light text-dark p-2 mx-2">Global Coverage</span>
-                <span class="badge bg-light text-dark p-2 mx-2">Real-time Analysis</span>
-            </div>
-        </div>
+<div class="container">
+    <header>
+        <h1>🦠 SFTSV-DB</h1>
+        <div class="subtitle">全球发热伴血小板减少综合征病毒基因组监测平台</div>
+        <p style="margin-top: 1rem; color: #2c5a74;">基于 Nextstrain 生态的实时进化追踪、在线分析与数据共享</p>
     </header>
 
-    <!-- 核心功能卡片 -->
-    <section class="container my-5">
-        <div class="row g-4 text-center">
-            <!-- 功能 1: 进化树 -->
-            <div class="col-md-4">
-                <div class="card h-100 shadow feature-card">
-                    <div class="card-body">
-                        <h3 class="card-title">Interactive Tree</h3>
-                        <p class="card-text">Explore the spatiotemporal evolution of SFTSV using Nextstrain engine.</p>
-                        <a href="https://nextstrain.org/community/你的用户名/你的仓库名" class="btn btn-primary" target="_blank">View Dashboard</a>
-                    </div>
-                </div>
-            </div>
-            <!-- 功能 2: 在线分析 -->
-            <div class="col-md-4">
-                <div class="card h-100 shadow feature-card">
-                    <div class="card-body">
-                        <h3 class="card-title">Genomic Analysis</h3>
-                        <p class="card-text">Online sequence alignment, mutation calling, and clade assignment.</p>
-                        <a href="https://clades.nextstrain.org" class="btn btn-outline-primary" target="_blank">Run Nextclade</a>
-                    </div>
-                </div>
-            </div>
-            <!-- 功能 3: 数据下载 -->
-            <div class="col-md-4">
-                <div class="card h-100 shadow feature-card">
-                    <div class="card-body">
-                        <h3 class="card-title">Data Warehouse</h3>
-                        <p class="card-text">Download curated genomic sequences and standardized metadata.</p>
-                        <a href="./data/sftsv_metadata.csv" class="btn btn-success">Download CSV</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- 统计面板（请根据实际数据更新） -->
+    <div class="stats">
+        <div class="stat-card"><div class="stat-number">20</div><div class="stat-label">基因组序列</div></div>
+        <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">覆盖国家</div></div>
+        <div class="stat-card"><div class="stat-number">1</div><div class="stat-label">基因组节段</div></div>
+        <div class="stat-card"><div class="stat-number">2026</div><div class="stat-label">最新更新</div></div>
+    </div>
 
-    <footer class="bg-light py-4 text-center border-top">
-        <p class="text-muted">© 2026 SFTSV-DB Project | Powered by Nextstrain & GitHub</p>
+    <!-- 核心功能入口 -->
+    <div class="button-panel">
+        <a href="https://nextstrain.org/community/xushuai-cdc/sftsv-data/S-segment" target="_blank" class="btn btn-primary">🌲 交互式进化树</a>
+        <a href="https://nextclade.org" target="_blank" class="btn btn-outline">🧬 在线分析 (Nextclade)</a>
+        <a href="https://github.com/xushuai-cdc/sftsv-data" target="_blank" class="btn btn-outline">📥 数据下载</a>
+    </div>
+
+    <!-- 项目介绍 -->
+    <div class="info-section">
+        <h2>📌 平台简介</h2>
+        <p>SFTSV-DB 是一个针对<strong>发热伴血小板减少综合征病毒 (Severe fever with thrombocytopenia syndrome virus)</strong> 的开放式基因组监测平台。系统整合 NCBI 公共数据，通过标准化工作流构建时间分辨系统发育树，并借助 Nextstrain 引擎实现交互式可视化。</p>
+        <p style="margin-top: 0.8rem;">🔍 <strong>当前版本主要覆盖 S 节段</strong>，未来将逐步整合 M / L 节段及重配分析模块。</p>
+    </div>
+
+    <div class="info-section">
+        <h2>📚 数据与引用</h2>
+        <p>所有序列源自 NCBI GenBank，经自动质控与标准化处理。若使用本平台，请引用：</p>
+        <p style="background: #eef3fa; padding: 0.8rem; border-radius: 12px; font-size: 0.9rem; margin-top: 0.8rem;">[Your Name] et al., "SFTSV-DB: a real-time genomic surveillance platform for Severe Fever with Thrombocytopenia Syndrome Virus", [Journal], 2026 (in preparation).<br>📖 同时致谢 Nextstrain 团队 (Hadfield et al., Bioinformatics 2018)。</p>
+    </div>
+
+    <footer>
+        © 2026 SFTSV-DB 维护者 | 数据来源于 NCBI | 平台基于 Nextstrain / GitHub Pages 构建<br>
+        持续更新中 · 欢迎通过 GitHub Issues 反馈
     </footer>
+</div>
 </body>
 </html>
