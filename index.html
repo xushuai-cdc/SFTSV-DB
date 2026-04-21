@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SFTSV-DB | Genomic Surveillance Portal</title>
+    <!-- 引入 Bootstrap 提升专业感 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hero-section { background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%); color: white; padding: 80px 0; }
+        .feature-card { transition: transform 0.3s; cursor: pointer; }
+        .feature-card:hover { transform: translateY(-10px); }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">SFTSV-Genomic-Dashboard</a>
+        </div>
+    </nav>
 
+    <!-- 主展示区 -->
+    <header class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">SFTSV-DB</h1>
+            <p class="lead">The First Global Genomic Surveillance Platform for SFTS Virus</p>
+            <div class="mt-4">
+                <span class="badge bg-light text-dark p-2 mx-2">2000+ Sequences</span>
+                <span class="badge bg-light text-dark p-2 mx-2">Global Coverage</span>
+                <span class="badge bg-light text-dark p-2 mx-2">Real-time Analysis</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 核心功能卡片 -->
+    <section class="container my-5">
+        <div class="row g-4 text-center">
+            <!-- 功能 1: 进化树 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow feature-card">
+                    <div class="card-body">
+                        <h3 class="card-title">Interactive Tree</h3>
+                        <p class="card-text">Explore the spatiotemporal evolution of SFTSV using Nextstrain engine.</p>
+                        <a href="https://nextstrain.org/community/你的用户名/你的仓库名" class="btn btn-primary" target="_blank">View Dashboard</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 功能 2: 在线分析 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow feature-card">
+                    <div class="card-body">
+                        <h3 class="card-title">Genomic Analysis</h3>
+                        <p class="card-text">Online sequence alignment, mutation calling, and clade assignment.</p>
+                        <a href="https://clades.nextstrain.org" class="btn btn-outline-primary" target="_blank">Run Nextclade</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 功能 3: 数据下载 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow feature-card">
+                    <div class="card-body">
+                        <h3 class="card-title">Data Warehouse</h3>
+                        <p class="card-text">Download curated genomic sequences and standardized metadata.</p>
+                        <a href="./data/sftsv_metadata.csv" class="btn btn-success">Download CSV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-light py-4 text-center border-top">
+        <p class="text-muted">© 2026 SFTSV-DB Project | Powered by Nextstrain & GitHub</p>
+    </footer>
+</body>
+</html>
